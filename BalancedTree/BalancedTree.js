@@ -7,21 +7,21 @@ class TreeNode {
   }
   
   function isBalanced(root) {
-    // Helper function to calculate the height of a subtree
-    function getHeight(node) {
+    // Subtree Calculation
+    function getHeight(node) { 
       if (node === null) {
         return 0;
       }
       const leftHeight = getHeight(node.left);
       if (leftHeight === -1) {
-        return -1; // Left subtree is unbalanced, propagate -1 up the tree
+        return -1; // Left subtree is unbalanced, -1 up the tree
       }
       const rightHeight = getHeight(node.right);
       if (rightHeight === -1) {
-        return -1; // Right subtree is unbalanced, propagate -1 up the tree
+        return -1; // Right subtree is unbalanced, -1 up the tree
       }
       if (Math.abs(leftHeight - rightHeight) > 1) {
-        return -1; // Subtree is unbalanced, propagate -1 up the tree
+        return -1; // Subtree is unbalanced, -1 up the tree
       }
       return Math.max(leftHeight, rightHeight) + 1;
     }

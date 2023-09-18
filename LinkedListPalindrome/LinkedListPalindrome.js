@@ -6,7 +6,7 @@ class ListNode {
   }
   
   function isPalindrome(head) {
-    // Helper function to reverse an array
+    // Reverse an array
     function reverseArray(arr) {
       return arr.slice().reverse();
     }
