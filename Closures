@@ -1,0 +1,14 @@
+const updateClickCount = (function() {
+  let clickCount = 0;
+
+  // This inner function is returned and has access to the outer function's variables (clickCount)
+  return function() {
+    clickCount++;
+    console.log(`Button clicked ${clickCount} times`);
+  };
+})();
+
+// Each time updateClickCount is called, it will increase the click count
+updateClickCount(); // Output: Button clicked 1 times
+updateClickCount(); // Output: Button clicked 2 times
+updateClickCount(); // Output: Button clicked 3 times
